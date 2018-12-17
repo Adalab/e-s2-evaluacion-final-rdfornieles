@@ -17,10 +17,21 @@ function handlerSearch(event){
         
         for ( const itemData of data) {
             const itemDataName = itemData.show.name;
-            const itemDataImageM = itemData.show.image.medium;
-            //const itemDataImageO = itemData.show.image.original;
-            listEl.innerHTML += `<img src="${itemDataImageM}" alt="Imagen de la serie"></img><li class="listEl"> ${itemDataName} </li>`;
+            let itemDataImage = itemData.show.image;
+
+            const imageNull = 'https://via.placeholder.com/210x295/cccccc/666666/?text=TV';
+            console.log(imageNull);
+            
+            if (itemDataImage === null) {
+                itemDataImage = imageNull
+            } else {
+                itemDataImage = itemData.show.image.medium
+            }
+
+            listEl.innerHTML += `<img src="${itemDataImage}" alt="Imagen de la serie"></img><li class="listEl"> ${itemDataName} </li>`;
         }
+        
+
     })
 }
 
