@@ -35,4 +35,10 @@ function handlerSearch(event){
     })
 }
 
+function favoriteShow(event) {
+    const selectFavorite = event.target;
+    selectFavorite.classList.toggle("favorite");
+}
+
 btnEl.addEventListener('click', handlerSearch);
+listEl.addEventListener('click', favoriteShow);
