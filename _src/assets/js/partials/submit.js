@@ -2,7 +2,7 @@ const btnEl = document.querySelector(".btn");
 
 const input = document.querySelector("#searchTv");
 
-const listEl = document.querySelector(".list");
+const list = document.querySelector(".list");
 
 function handlerSearch(event){
     const inputEl = input.value;
@@ -18,7 +18,7 @@ function handlerSearch(event){
         for ( const itemData of data) {
             const itemDataName = itemData.show.name;
             let itemDataImage = itemData.show.image;
-
+            
             const imageNull = 'https://via.placeholder.com/210x295/cccccc/666666/?text=TV';
             
             if (itemDataImage === null) {
@@ -27,22 +27,23 @@ function handlerSearch(event){
                 itemDataImage = itemData.show.image.medium
             }
 
-            listEl.innerHTML += `<li class="liEl"><img src="${itemDataImage}" alt="Imagen de la serie"></img> ${itemDataName} </li>`;
+            list.innerHTML += `<li class="li-el"><img src="${itemDataImage}" alt="Imagen de la serie"></img> ${itemDataName} </li>`;
         }
         
-
     })
     
-
 }
-function favoriteShow(event) {
-    const selectFavorite = event.currentTarget;
+let listEl = document.querySelectorAll(".li-el");
+console.log(listEl);
+function favoriteShow() {
+    const selectFavorite = event.target;
     selectFavorite.classList.toggle("favorite");
-
    
 }
+list.addEventListener('click', favoriteShow);
+
 btnEl.addEventListener('click', handlerSearch);
-listEl.addEventListener('click', favoriteShow);
+
 
 /*function printLocalStorage() {
     localStorage.setItem(itemData.show.id);
