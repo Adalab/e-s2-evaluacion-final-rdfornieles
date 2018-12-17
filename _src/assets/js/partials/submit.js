@@ -14,7 +14,7 @@ function handlerSearch(event){
       })
     .then(function(data) {
         console.log(data);
-        console.log(data.name);
+        console.log(data.show);
     })
 }
 
