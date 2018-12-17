@@ -18,9 +18,9 @@
 	"js": {
 		"src": [
       "_src/assets/js/main.js",
-      "_src/assets/js/jSon.js",
-      "_src/assets/js/localStorage.js",
-      "_src/assets/js/submit.js"
+      "_src/assets/js/partials/jSon.js",
+      "_src/assets/js/partials/localStorage.js",
+      "_src/assets/js/partials/submit.js"
 		],
 		"dest": "public/assets/js/",
     "dist": "docs/assets/js/"
