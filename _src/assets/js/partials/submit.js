@@ -18,10 +18,8 @@ function handlerSearch(event){
         for ( const itemData of data) {
             const itemDataName = itemData.show.name;
             const itemDataImageM = itemData.show.image.medium;
-            const itemDataImageO = itemData.show.image.original;
-            console.log(itemDataImageO);
-            console.log(itemDataImageM);
-            listEl.innerHTML += `<li class="listEl"> ${itemDataName} ${itemDataImageM} ${itemDataImageO}</li>`;
+            //const itemDataImageO = itemData.show.image.original;
+            listEl.innerHTML += `<img src="${itemDataImageM}" alt="Imagen de la serie"></img><li class="listEl"> ${itemDataName} </li>`;
         }
     })
 }
