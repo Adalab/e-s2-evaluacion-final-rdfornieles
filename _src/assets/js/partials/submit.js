@@ -38,6 +38,7 @@ function handlerSearch(event){
 function favoriteShow(event) {
     const selectFavorite = event.target;
     selectFavorite.classList.toggle("favorite");
+    console.log(favoriteShow);
 }
 
 btnEl.addEventListener('click', handlerSearch);
