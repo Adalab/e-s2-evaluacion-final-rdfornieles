@@ -38,7 +38,10 @@ function handlerSearch(event){
         function favoriteShow(event) {
             const itemsList = event.currentTarget;
             itemsList.classList.toggle("favorite");
-            localStorage.setItem(itemsList.id, "cualquier cosa")
+            localStorage.setItem(itemsList.id, "Favorite Show");
+            if (itemsList.classList.contains("favorite")) {
+                localStorage.setItem(itemsList.id);
+            } else {localStorage.removeItem(itemsList.id)};
         }
 
         for (const itemsList of listEl) {
