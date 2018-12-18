@@ -31,17 +31,17 @@ function handlerSearch(event){
             list.innerHTML += `<li class="li-el" id="${itemDataId}"><img src="${itemDataImage}" alt="Imagen de la serie"></img> <p class=text>${itemDataName}</p> </li>`;
 
         }
-        
-        let listEl = document.querySelectorAll(".li-el");
+
+        const listEl = document.querySelectorAll(".li-el");
         console.log(listEl);
 
         function favoriteShow(event) {
-            const itemList = event.currentTarget;
-            itemList.classList.toggle("favorite");
+            const itemsList = event.currentTarget;
+            itemsList.classList.toggle("favorite");
         }
 
-        for (let itemList of listEl) {
-            itemList.addEventListener('click', favoriteShow);
+        for (const itemsList of listEl) {
+            itemsList.addEventListener('click', favoriteShow);
         }
     })
     
