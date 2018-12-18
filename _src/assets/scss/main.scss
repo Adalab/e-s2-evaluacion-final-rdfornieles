@@ -1,4 +1,9 @@
-@import 'core/settings';
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
+@import 'core/settings';
 @import'layout/header';
 @import'layout/main';
