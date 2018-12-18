@@ -38,10 +38,18 @@ function handlerSearch(event){
         function favoriteShow(event) {
             const itemsList = event.currentTarget;
             itemsList.classList.toggle("favorite");
+
+            let favoritesArr = [];
+            favoritesArr[0] = itemsList.id;
+            //console.log(favoritesArr);
+
             localStorage.setItem(itemsList.id, "Favorite Show");
+            //console.log(itemsList.id);
             if (itemsList.classList.contains("favorite")) {
                 localStorage.setItem(itemsList.id, "Favorite Show");
+                favoritesArr = JSON.stringify(localStorage.getItem(itemsList.id));
             } else {localStorage.removeItem(itemsList.id, "Favorite Show")};
+            
         }
 
         for (const itemsList of listEl) {
@@ -49,16 +57,16 @@ function handlerSearch(event){
         }
 
         
-
+        /*let favoritesArr = [];
         function keepFavLS() {
-            let favoritesArr = [];
+            
             const saveId = JSON.parse(localStorage.getItem(itemsList.id));
-
+            console.log(favoritesArr);
             if (saveId) {
                 favoritesArr = saveId;
             } 
         }
-        window.addEventListener('load', keepFavLS);
+        window.addEventListener('load', keepFavLS);*/
         
     })
     
