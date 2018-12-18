@@ -5,6 +5,7 @@ const input = document.querySelector("#searchTv");
 const list = document.querySelector(".list");
 
 function handlerSearch(event) {
+    list.innerHTML = "";
     const inputEl = input.value;
     event.preventDefault();
 
@@ -27,7 +28,7 @@ function handlerSearch(event) {
                 } else {
                     itemDataImage = itemData.show.image.medium
                 }
-
+                
                 list.innerHTML += `<li class="li-el" id="${itemDataId}"><img src="${itemDataImage}" alt="Imagen de la serie"></img> <p class=text>${itemDataName}</p> </li>`;
 
             }
