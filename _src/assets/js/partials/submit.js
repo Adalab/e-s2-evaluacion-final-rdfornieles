@@ -13,13 +13,13 @@ function handlerSearch(event){
         return response.json();
       })
     .then(function(data) {
-        console.log(data);
+        //console.log(data);
         
         for ( const itemData of data) {
             const itemDataName = itemData.show.name;
             let itemDataImage = itemData.show.image;
             let itemDataId = itemData.show.id;
-            
+            console.log(itemDataId);
             const imageNull = 'https://via.placeholder.com/210x295/cccccc/666666/?text=TV';
             
             if (itemDataImage === null) {
@@ -33,11 +33,12 @@ function handlerSearch(event){
         }
 
         const listEl = document.querySelectorAll(".li-el");
-        console.log(listEl);
+        //console.log(listEl);
 
         function favoriteShow(event) {
             const itemsList = event.currentTarget;
             itemsList.classList.toggle("favorite");
+            localStorage.setItem(itemsList.id, "cualquier cosa")
         }
 
         for (const itemsList of listEl) {
@@ -46,14 +47,14 @@ function handlerSearch(event){
         
         //let favoriteArr = [];
 
-        function saveId(){
+        /*function saveId(){
         localStorage.setItem("itemsDataId", "cualquier cosa");
 
         }
         
         for (items of itemDataId) {
         items.addEventListener('click', saveId);
-        }
+        }*/
     })
     
 }
