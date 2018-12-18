@@ -3,16 +3,21 @@
     
     <head>
         <meta charset="UTF-8">
-        <title>Adalab Web Starter Kit</title>
+        <title>Searching TV Shows</title>
         <link rel="icon" href="favicon.png" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link rel="stylesheet" href="assets/css/main.css">
     </head>
     
     <body>
-        <div class="page">
-            <header class="page__header">Header</header>
-            <main class="page__main">Main</main>
-        </div>
+         <h1 class="title">Buscador de series</h1>
+
+        <form class="container" action="/signup" method="post">
+            <input type="text" name="searchTv" id="searchTv">
+            <button type="submit" class="btn">Search</button>
+        </form>
+        <ul class="list"></ul>
+        <script type="text/javascript" src="assets/js/main.js"></script>
     </body>
 
 </html>
