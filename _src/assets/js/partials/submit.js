@@ -27,7 +27,7 @@ function handlerSearch(event){
                 itemDataImage = itemData.show.image.medium
             }
 
-            list.innerHTML += `<li class="li-el"><img src="${itemDataImage}" alt="Imagen de la serie"></img> ${itemDataName} </li>`;
+            list.innerHTML += `<li class="li-el"><img src="${itemDataImage}" alt="Imagen de la serie"></img> <p class=text>${itemDataName}</p> </li>`;
 
             const listEl = document.querySelectorAll(".li-el");
             console.log(listEl);
