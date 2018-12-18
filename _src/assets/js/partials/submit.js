@@ -40,8 +40,8 @@ function handlerSearch(event){
             itemsList.classList.toggle("favorite");
             localStorage.setItem(itemsList.id, "Favorite Show");
             if (itemsList.classList.contains("favorite")) {
-                localStorage.setItem(itemsList.id);
-            } else {localStorage.removeItem(itemsList.id)};
+                localStorage.setItem(itemsList.id, "Favorite Show");
+            } else {localStorage.removeItem(itemsList.id, "Favorite Show")};
         }
 
         for (const itemsList of listEl) {
