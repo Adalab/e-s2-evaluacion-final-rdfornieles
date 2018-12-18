@@ -43,6 +43,17 @@ function handlerSearch(event){
         for (const itemsList of listEl) {
             itemsList.addEventListener('click', favoriteShow);
         }
+        
+        //let favoriteArr = [];
+
+        function saveId(){
+        localStorage.setItem("itemsDataId", "cualquier cosa");
+
+        }
+        
+        for (items of itemDataId) {
+        items.addEventListener('click', saveId);
+        }
     })
     
 }
