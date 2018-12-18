@@ -19,7 +19,7 @@ function handlerSearch(event){
             const itemDataName = itemData.show.name;
             let itemDataImage = itemData.show.image;
             let itemDataId = itemData.show.id;
-            console.log(itemDataId);
+            //console.log(itemDataId);
             const imageNull = 'https://via.placeholder.com/210x295/cccccc/666666/?text=TV';
             
             if (itemDataImage === null) {
@@ -47,7 +47,18 @@ function handlerSearch(event){
         for (const itemsList of listEl) {
             itemsList.addEventListener('click', favoriteShow);
         }
+
         
+
+        function keepFavLS() {
+            let favoritesArr = [];
+            const saveId = JSON.parse(localStorage.getItem(itemsList.id));
+
+            if (saveId) {
+                favoritesArr = saveId;
+            } 
+        }
+        window.addEventListener('load', keepFavLS);
         
     })
     
@@ -56,9 +67,3 @@ function handlerSearch(event){
 
 
 btnEl.addEventListener('click', handlerSearch);
-
-
-/*function printLocalStorage() {
-    localStorage.setItem(itemData.show.id);
-}
-printLocalStorage();*/
