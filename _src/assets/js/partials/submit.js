@@ -4,6 +4,8 @@ const input = document.querySelector("#searchTv");
 
 const list = document.querySelector(".list");
 
+const results = document.querySelector(".results");
+
 function handlerSearch(event) {
     list.innerHTML = "";
     const inputEl = input.value;
@@ -14,13 +16,15 @@ function handlerSearch(event) {
             return response.json();
         })
         .then(function (data) {
-
+            let totalData = data.length;
 
             for (const itemData of data) {
                 const itemDataName = itemData.show.name;
                 let itemDataImage = itemData.show.image;
                 let itemDataId = itemData.show.id;
-
+                let itemDataLanguage = itemData.show.language;
+                
+                console.log(data);
                 const imageNull = 'https://via.placeholder.com/210x295/cccccc/666666/?text=TV';
 
                 if (itemDataImage === null) {
@@ -29,9 +33,13 @@ function handlerSearch(event) {
                     itemDataImage = itemData.show.image.medium
                 }
                 
-                list.innerHTML += `<li class="li-el" id="${itemDataId}"><img src="${itemDataImage}" alt="Imagen de la serie"></img> <p class=text>${itemDataName}</p> </li>`;
+                list.innerHTML += `<li class="li-el" id="${itemDataId}"><img src="${itemDataImage}" alt="Imagen de la serie"></img> <p class=text>${itemDataName}</p> <p> Lenguaje: ${itemDataLanguage}</p></li>`;
+
+                
 
             }
+
+            results.innerHTML = `Hemos encontrado ${totalData} resultados`;
 
             const listEl = document.querySelectorAll(".li-el");
 
@@ -61,5 +69,12 @@ function handlerSearch(event) {
 
 }
 
+function hiddenList(){
+    console.log('hola');
+    list.classList.toggle("hidden");
+    
+}
 
+
+results.addEventListener('click', hiddenList);
 btnEl.addEventListener('click', handlerSearch);
