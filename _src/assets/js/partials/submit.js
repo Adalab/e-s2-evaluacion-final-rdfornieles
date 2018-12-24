@@ -1,3 +1,4 @@
+'use strict';
 const btnEl = document.querySelector(".btn");
 
 const input = document.querySelector("#searchTv");
@@ -39,9 +40,10 @@ function handlerSearch(event) {
             function favoriteShow(event) {
                 const itemsList = event.currentTarget;
                 itemsList.classList.toggle("favorite");
-
+                console.log(itemsList);
                 let favoritesArr = [];
                 favoritesArr[0] = itemsList.id;
+                //const favLocal = JSON.parse(localStorage.getItem('favoritesShows'))
 
 
                 localStorage.setItem(itemsList.id, "Favorite Show");
