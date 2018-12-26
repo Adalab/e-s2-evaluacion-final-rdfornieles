@@ -35,10 +35,11 @@ function handlerSearch(event) {
             }
 
             const listEl = document.querySelectorAll(".li-el");
-            const favLocal = JSON.parse(localStorage.getItem('favoritesShows'))|| {};
+            
 
             function favoriteShow(event) {
                 const itemsList = event.currentTarget;
+                const favLocal = JSON.parse(localStorage.getItem('favoritesShows'))|| {};
                 itemsList.classList.toggle("favorite");
                 //let favoritesArr = [];
                 favLocal[itemsList.id] = itemsList.classList.contains("favorite");
