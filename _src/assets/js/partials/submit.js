@@ -41,7 +41,7 @@ function handlerSearch(event) {
                 const itemsList = event.currentTarget;
                 const favLocal = JSON.parse(localStorage.getItem('favoritesShows'))|| {};
                 itemsList.classList.toggle("favorite");
-                //let favoritesArr = [];
+                
                 favLocal[itemsList.id] = itemsList.classList.contains("favorite");
                 
                 
@@ -49,19 +49,18 @@ function handlerSearch(event) {
                 localStorage.setItem("favoritesShows", JSON.stringify(favLocal));
 
                 /*if (itemsList.classList.contains("favorite")) {
-                    localStorage.setItem(itemsList.id, "Favorite Show");
-                    favoritesArr = JSON.stringify(localStorage.getItem(itemsList.id));
-                } else { localStorage.removeItem(itemsList.id, "Favorite Show") };*/
+                    favLocal
+                    //localStorage.setItem(itemsList.id, "Favorite Show");
+                    //favoritesArr = JSON.stringify(localStorage.getItem(itemsList.id));
+                } else { localStorage.removeItem(favLocal) };*/
 
             }
 
             for (const itemsList of listEl) {
                 itemsList.addEventListener('click', favoriteShow);
             }
-
         })
 
 }
-
 
 btnEl.addEventListener('click', handlerSearch);
