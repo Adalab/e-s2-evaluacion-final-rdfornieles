@@ -35,23 +35,22 @@ function handlerSearch(event) {
             }
 
             const listEl = document.querySelectorAll(".li-el");
-
+            const favLocal = JSON.parse(localStorage.getItem('favoritesShows'))|| {};
 
             function favoriteShow(event) {
                 const itemsList = event.currentTarget;
                 itemsList.classList.toggle("favorite");
-                console.log(itemsList);
-                let favoritesArr = [];
-                favoritesArr[0] = itemsList.id;
-                //const favLocal = JSON.parse(localStorage.getItem('favoritesShows'))
+                //let favoritesArr = [];
+                favLocal[itemsList.id] = itemsList.classList.contains("favorite");
+                
+                
 
+                localStorage.setItem("favoritesShows", JSON.stringify(favLocal));
 
-                localStorage.setItem(itemsList.id, "Favorite Show");
-
-                if (itemsList.classList.contains("favorite")) {
+                /*if (itemsList.classList.contains("favorite")) {
                     localStorage.setItem(itemsList.id, "Favorite Show");
                     favoritesArr = JSON.stringify(localStorage.getItem(itemsList.id));
-                } else { localStorage.removeItem(itemsList.id, "Favorite Show") };
+                } else { localStorage.removeItem(itemsList.id, "Favorite Show") };*/
 
             }
 
